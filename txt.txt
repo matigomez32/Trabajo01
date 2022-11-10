@@ -1,0 +1,92 @@
+    /*
+
+                System.out.println("**************************************");
+                habRepository.getAll().forEach(System.out::println);
+
+                System.out.println("**************************************");
+                habRepository
+                  .getLikeNumerodehabitacion("-").forEach(System.out::println);
+                System.out.println("**************************************");
+
+                habRepository
+                 .getLikeDescripcion("-").forEach(System.out::println);
+                System.out.println("**************************************");
+                habRepository
+                                .getLikeCapacidad("-").forEach(System.out::println);
+                System.out.println("**************************************");
+                 
+        /*         
+/*
+                I_HotelRepository hotelRepository = new HotelRepository(conn);
+                Hotel hotel = new Hotel("Lavalleja", "gran hotel", "2 estrellas", "2020", "3443232");
+                hotelRepository.save(hotel);
+                System.out.println(hotelRepository);
+
+                hotelRepository.remove(hotelRepository.getByIdHotel(3));
+
+                hotel = hotelRepository.getByIdHotel(5);
+
+                if (hotel != null && hotel.getIdHotel() != 0) {
+                        hotel.setNombreHotel("Supreme");
+                        hotel.setDescripcion("excelente hotel");
+                        hotel.setCategoria("3 estrellas");
+                        hotel.setCodPostal("3454");
+                        hotel.setTelefono("332432443");
+
+                        habRepository.update(hab);
+                }
+
+                System.out.println("**************************************");
+                hotelRepository.getAll().forEach(System.out::println);
+
+                System.out.println("**************************************");
+                hotelRepository
+                                .getLikeNombreHotel("Futury")
+                                .forEach(System.out::println);
+                System.out.println("**************************************");
+                hotelRepository
+                                .getLikeTelefono("32323223")
+                                .forEach(System.out::println);
+
+                System.out.println("**************************************");
+
+                I_ReservaRepository reservaRepository = new ReservaRepository(conn);
+                Reserva reserva = new Reserva("2022-05-21", "2022-06-21", 3322);
+                reservaRepository.save(reserva);
+                System.out.println(reservaRepository);
+
+                reservaRepository.remove(reservaRepository.getByIdReserva(3));
+
+                reserva = reservaRepository.getByIdReserva(5);
+
+                if (reserva != null && reserva.getIdReserva() != 0) {
+
+                        reserva.setFechaInicio("2023-03-30");
+                        reserva.setFechaFin("2023-04-30");
+                        reserva.setPrecio(3454);
+
+                        reservaRepository.update(reserva);
+                }
+
+                System.out.println("**************************************");
+                reservaRepository.getAll().forEach(System.out::println);
+
+                System.out.println("**************************************");
+                reservaRepository
+                                .getLikeFechaInicio("20-20-20")
+                                .forEach(System.out::println);
+                System.out.println("**************************************");
+                reservaRepository
+                                .getLikeFechaFin("32-32-32")
+                                .forEach(System.out::println);
+*/
+        }
+}
+
+
+
+
+
+
+ 
+   
