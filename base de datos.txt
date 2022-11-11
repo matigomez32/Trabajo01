@@ -1,0 +1,143 @@
+drop database if exists hotel;
+CREATE DATABASE hotel;
+use hotel;
+
+
+drop table if exists clientes;
+drop table if exists reservas;
+drop table if exists habitaciones;
+drop table if exists hoteles;
+
+CREATE TABLE clientes (
+  idcliente INT AUTO_INCREMENT,
+  nombre VARCHAR(45),
+  apellido VARCHAR(45),
+  domicilio VARCHAR(45),
+  codPostal VARCHAR(45),
+  telefono VARCHAR(45),
+  PRIMARY KEY (idcliente));
+
+
+  CREATE TABLE hoteles (
+  idhotel INT AUTO_INCREMENT,
+  nombreHotel VARCHAR(45),
+  descripcion VARCHAR(45),
+  categoria VARCHAR(45),
+  domicilio VARCHAR(45),
+  codPostal VARCHAR(45),
+  telefono VARCHAR(45),
+  PRIMARY KEY (idhotel));
+  
+
+  CREATE TABLE habitaciones (
+	idhabitacion INT AUTO_INCREMENT,
+	idhotel INT ,
+	numerodehabitacion INT,
+	descripcion VARCHAR(45),
+	capacidad VARCHAR(45),
+   PRIMARY KEY (idhabitacion));
+     
+   CREATE TABLE reservas (
+  idreserva INT AUTO_INCREMENT,
+  idcliente INT,
+  idhabitacion INT,
+  fechaInicio DATE,
+  fechaFin DATE,
+  precio INT,
+  PRIMARY KEY (idreserva));
+
+
+ 
+
+
+  
+  
+ALTER TABLE reservas
+ADD CONSTRAINT fk_reservas_clientes
+FOREIGN KEY (idcliente) REFERENCES clientes(idcliente);
+
+ALTER TABLE reservas
+ADD CONSTRAINT fk_reservas_habitaciones
+FOREIGN KEY (idhabitacion) REFERENCES habitaciones(idhabitacion);
+
+ALTER TABLE habitaciones
+ADD CONSTRAINT fk_habitaciones_hoteles
+FOREIGN KEY (idhotel) REFERENCES  hoteles(idhotel);
+
+
+   INSERT INTO  clientes(idcliente, nombre, apellido, domicilio, codPostal, telefono)
+    VALUES (1, 'Jorge', 'Ramirez', 'Jufre 456', '1313', '48569356');
+    INSERT INTO  clientes(idcliente, nombre, apellido, domicilio, codPostal, telefono)
+    VALUES (2, 'Matias', 'Perez', 'Julian Alvarez', '1813', '38569356');
+    INSERT INTO  clientes(idcliente, nombre, apellido, domicilio, codPostal, telefono)
+    VALUES (3, 'Alfonso', 'Garcia', 'Loyola 2342', '1413', '88569356');
+    INSERT INTO  clientes(idcliente, nombre, apellido, domicilio, codPostal, telefono)
+    VALUES (4, 'Osmar', 'Juarez', ' Vera 1456', '1913', '98569356');
+    INSERT INTO  clientes(idcliente, nombre, apellido, domicilio, codPostal, telefono)
+    VALUES (5, 'Laura', 'Ruiz', 'Juan Justo 4456', '1313', '58569356');
+select *
+    from clientes;
+
+
+
+ INSERT INTO hoteles(idhotel, nombreHotel, descripcion, categoria, domicilio, codPostal, telefono)   
+ VALUES    (500, 'Hotel saint Honores', 'Lujoso hotel', '4 estrellas','Araoz 23' ,'1111', '48532456');       
+ INSERT INTO hoteles(idhotel, nombreHotel, descripcion, categoria, domicilio, codPostal, telefono)   
+ VALUES    (501, 'La fuente', 'Excelente hotel', '3 estrellas','Darwin 3221' ,'1431', '88532456');
+  INSERT INTO hoteles(idhotel, nombreHotel, descripcion, categoria, domicilio, codPostal, telefono)   
+ VALUES    (502, 'Sheraton', 'Grandioso hotel', '4 estrellas','Luis drago' ,'2511', '28532456');
+  INSERT INTO hoteles(idhotel, nombreHotel, descripcion, categoria, domicilio, codPostal, telefono)   
+ VALUES    (503, 'Conrad', 'Hotel con gran variedad', '5estrellas','Velasco 1323' ,'1521', '18532456');
+  INSERT INTO hoteles(idhotel, nombreHotel, descripcion, categoria, domicilio, codPostal, telefono)   
+ VALUES    (504, 'Oasis', 'Hotel con gran altura', '2 estrellas','Angel Gallardo 34' ,'1341', '68532456');
+ 
+ 
+ select *
+ from hoteles;
+ 
+ INSERT INTO habitaciones(idhabitacion,idhotel,numerodehabitacion, descripcion, capacidad)   
+ VALUES                   (40,500,432,'Excelente habitacion digna de ver','1 personas');
+INSERT INTO habitaciones(idhabitacion,idhotel,numerodehabitacion, descripcion, capacidad)    
+ VALUES                  (34,501,896,'Excelente habitacion digna admirar','4 personas');
+INSERT INTO habitaciones(idhabitacion,idhotel,numerodehabitacion, descripcion, capacidad)   
+ VALUES                  (23,502,297,'Excelente habitacion digna de observar','2 personas');
+INSERT INTO habitaciones(idhabitacion,idhotel,numerodehabitacion, descripcion, capacidad)      
+ VALUES                  (12,503,345,'Excelente habitacion','1 personas');
+INSERT INTO habitaciones(idhabitacion,idhotel,numerodehabitacion, descripcion, capacidad)         
+ VALUES                  (56,504,837,'Sorprendente habitacion ','3 personas');
+ 
+ select * from habitaciones;
+ 
+  INSERT INTO reservas(idreserva,idcliente,idhabitacion, fechaInicio, fechaFin, precio)     
+    VALUES            (120,1,40, '2024-03-24', '2024-04-24', 54532);
+        INSERT INTO reservas(idreserva,idcliente,idhabitacion, fechaInicio, fechaFin, precio)     
+    VALUES            (121,2,34, '2024-03-24', '2024-04-24', 54532);
+    INSERT INTO reservas(idreserva,idcliente,idhabitacion, fechaInicio, fechaFin, precio)   
+    VALUES            (122,3,23, '2025-03-25', '2025-04-25', 64532);
+     INSERT INTO reservas(idreserva,idcliente,idhabitacion, fechaInicio, fechaFin, precio)     
+    VALUES            (123,4,12,'2026-03-23', '2026-04-23', 44532);
+   INSERT INTO reservas(idreserva,idcliente,idhabitacion, fechaInicio, fechaFin, precio)     
+    VALUES            (124,5,56, '2023-06-22', '2023-7-22', 24532);
+
+	select *
+    from reservas;
+    
+
+
+
+
+
+
+
+ 
+   
+
+
+
+
+
+
+
+
+
+
